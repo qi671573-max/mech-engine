@@ -1,0 +1,32 @@
+# Build artifacts
+build/
+dist/
+*.spec
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+*.egg-info/
+.eggs/
+
+# Generated files
+gear_*.py
+gear_*.step
+gear_*.FCStd
+gear_*.html
+*.swp
+*.bas
+
+# Environment
+.env
+.venv/
+venv/
+MechEngine.exe
