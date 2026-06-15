@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mech-engine"
+version = "0.2.0"
+description = "AI-powered mechanical gear design assistant with ISO 6336 strength analysis"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "qi671573-max" }]
+keywords = ["gear", "mechanical-design", "ISO6336", "CAD", "simulation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.10"
+dependencies = ["rich>=13.0.0"]
+
+[project.optional-dependencies]
+api = ["fastapi>=0.111.0", "uvicorn[standard]>=0.30.0"]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "httpx>=0.27.0"]
+
+[project.scripts]
+mech = "mech:main"
+
+[project.urls]
+Homepage = "https://github.com/qi671573-max/mech-engine"
+Repository = "https://github.com/qi671573-max/mech-engine"
+Issues = "https://github.com/qi671573-max/mech-engine/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["tests/*"]
